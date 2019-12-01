@@ -1,8 +1,8 @@
 # P5c
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/p5c`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A command line interface that allows a user to select a listed monster from the game persona5
+When selected it will give the stats and elements effects
+User can then chose to go back to the list of monsters or see possible combination for fusion of monster
 
 ## Installation
 

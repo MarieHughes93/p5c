@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+P5c::CLI.new.call

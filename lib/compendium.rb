@@ -1,4 +1,5 @@
 class Compendium
+
 end
 #
 # Compendium has persona's

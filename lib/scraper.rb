@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-
+require_relative 'persona'
 class Scraper
 @@all_p = []
   def get_index_page
@@ -35,28 +35,29 @@ class Scraper
       nuclear = doc.css(".Nuclear").text
       bless = doc.css(".Bless").text
       curse = doc.css(".Curse").text
-      Peraon
+      stats = {"Strength"=> strength, "Magic"=> magic,"Endurance"=> endurance, "Agility" => agility, "Luck"=> luck}
+      elements = {"Physical"=> physical, "Gun"=> gun, "Fire"=> fire, "Ice"=> ice, "Electric"=> electric, "Wind"=> wind, "Psychic"=> psychic, "Nuclear"=> nuclear, "Bless"=> bless,"Curse"=>curse}
+      Persona.new(name, acrana, level, stats, elements)
     end
   end
   def combo_to_make
     @@all_p.each do |stuff|
       url = "http://mattkwock.com" + stuff
       doc = Nokogiri::HTML(open(url))
+      name = doc.css("h1.display-4").text
       fusion_table = doc.css(".combo-to tr.combo")
       fusion_table.each do |combo|
         persona1 = combo.css(".first-persona").text
-        formula = persona1 + persona2
-        binding.pry
+        persona2 = combo.css(".last-persona").text
+        formula = persona1 + "and" + persona2
+        persona = Persona.find_by_name(name)
+        persona.formulas << formula
       end
-    end
-  end
-  def when_combined_with
-    @@all_p.each do |stuff|
-      url = "http://mattkwock.com" + stuff
-      doc = Nokogiri::HTML(open(url))
     end
   end
 end
 scrap = Scraper.new
 scrap.get_index_page
-print scrap.combo_to_make
+scrap.personal_profile
+scrap.combo_to_make
+print Persona.find_by_name("Arsene")

@@ -1,9 +1,11 @@
 require 'pry'
 require_relative 'persona'
 class Compendium
-
   attr_accessor :formulas
-
+  def all_persona_by_name
+    persona = Persona.all_names.join(' ')
+    print persona
+  end
   def combinations(name)
   persona  = Persona.all.filter do |p|
       p.name == name
@@ -27,6 +29,3 @@ class Compendium
     end
   end
 end
-#
-# Compendium has persona's
-# Compendium has formulas for creating the persona

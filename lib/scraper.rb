@@ -1,7 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-require_relative 'persona'
 class Scraper
 @@all_p = []
   def get_index_page
@@ -44,7 +40,7 @@ class Scraper
     end
     print "Makoto: All done on my end! Passing it to you Haru!\n".blue
     sleep(1.5)
-    print "Haru: Great job team! I will get those over to futaba to get the combinations for creation!\n".blue
+    print "Haru: Great job team! I will get those over to Futaba to get the combinations for creation!\n".blue
   end
   def combo_to_make
     @@all_p.each do |stuff|

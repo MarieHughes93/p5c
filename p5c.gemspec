@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Person 5 the game "Monster" compendium.}
   spec.description   = %q{ Search for the persona's by name, arcana, or element& its weakness. Allows for you to view combinations to creat the persona.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/kchohee/p5c"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -38,5 +38,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_dependecy
+  spec.add_dependecy "nokogiri"
+  spec.add_dependecy "open-uri"
 end

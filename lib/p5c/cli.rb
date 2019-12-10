@@ -1,8 +1,4 @@
 # My CLI controller - responsible for business logic or user interactions
-require_relative '../persona'
-require_relative '../compendium'
-require_relative '../scraper'
-require 'pry'
 require 'colorize'
 
 class CLI
@@ -37,7 +33,7 @@ class CLI
     end
   end
   def self.option_2
-    puts "Yusuke: Please enter a Persona's name with a capital letter.(EX:Arson). To get your persona we must have nothing less than PERFECTION!!!\n".yellow
+    puts "Yusuke: Please enter a persona's name with a capital letter.(EX:Arson). To get your persona we must have nothing less than PERFECTION!!!\n".yellow
     answer = gets.strip
     choice = Persona.find_by_name(answer)
     puts "I am thou...\n"
@@ -97,7 +93,7 @@ class CLI
   end
 
   def call
-    puts "Futaba: Hi there! Welcome to The Person 5 Comdendium! So glad to speak with you again, Joker! Gimme' a moment to get the team together to help get everything for you!\n".blue
+    puts "Futaba: Hey! Welcome to The Person 5 Comdendium! So glad to be speaking with you again, Joker! Gimme' a moment to get the team together! We will get everything you need to steal their hearts teasure!\n".blue
     scrap = Scraper.new
     scrap.get_index_page
     scrap.personal_profile

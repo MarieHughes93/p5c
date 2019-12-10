@@ -19,7 +19,7 @@ class Scraper
       url = "http://mattkwock.com" + stuff
       doc = Nokogiri::HTML(open(url))
       name = doc.css("h1.display-4").text
-      acrana = doc.css(".arcana span").text
+      arcana = doc.css(".arcana span").text
       level = doc.css(".level span").text
       strength = doc.css(".Strength").text
       magic = doc.css(".Magic").text
@@ -37,10 +37,10 @@ class Scraper
       bless = doc.css(".Bless").text
       curse = doc.css(".Curse").text
       stats = {"Strength"=> strength, "Magic"=> magic,"Endurance"=> endurance, "Agility" => agility, "Luck"=> luck}
-      elements = {"Physical"=> physical, "Gun"=> gun, "Fire"=> fire, "Ice"=> ice, "Electric"=> electric, "Wind"=> wind, "Psychic"=> psychic, "Nuclear"=> nuclear, "Bless"=> bless,"Curse"=>curse}
-      Persona.new(name, acrana, level, stats, elements)
+      elements = { "Gun"=> gun, "Physical"=> physical, "Fire"=> fire, "Ice"=> ice, "Electric"=> electric, "Wind"=> wind, "Psychic"=> psychic, "Nuclear"=> nuclear, "Bless"=> bless,"Curse"=>curse}
+      Persona.new(name, arcana, level, stats, elements)
     end
-    print "We have the Persona!\n"
+    print "We have the Persona! Now we are gathering the formulas to create them!\n"
   end
   def combo_to_make
     @@all_p.each do |stuff|

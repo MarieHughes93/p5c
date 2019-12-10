@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 require_relative '../lib/p5c/cli'
-CLI.new.call
+app = CLI.new
+app.call
+app.opening

@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Marie (Cho) Hughes'"]
   spec.email         = ["'kchohee0630@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Person 5 the game "Monster" compendium.}
+  spec.description   = %q{ Search for the persona's by name, arcana, or element& its weakness. Allows for you to view combinations to creat the persona.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_dependecy
 end

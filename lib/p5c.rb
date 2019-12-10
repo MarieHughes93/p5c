@@ -1,5 +1,2 @@
-require "p5c/version"
-
-module P5c
-  # Your code goes here...
-end
+require_relative "./p5c/version"
+require_relative './p5c/cli'

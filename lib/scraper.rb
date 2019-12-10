@@ -5,14 +5,16 @@ require_relative 'persona'
 class Scraper
 @@all_p = []
   def get_index_page
-    print "We are gathering the info!\n"
+    sleep(1.5)
+    print "Morgona: I have the info Joker!\n".blue
     doc = Nokogiri::HTML(open("http://mattkwock.com/persona/"))
     list = doc.css(".persona")
-    list[0..10].each do |profile_page|
+    list.each do |profile_page|
       stuff = profile_page.css("a").attr("href").value
       @@all_p << stuff
     end
-    print "We have the info... Give us a moment to get it all sorted out!\n"
+    sleep(1.5)
+    print "Makoto: Great Morgana!Pass the baton! I will get it all sorted out!\n".blue
   end
   def personal_profile
     @@all_p.each do |stuff|
@@ -40,7 +42,9 @@ class Scraper
       elements = { "Gun"=> gun, "Physical"=> physical, "Fire"=> fire, "Ice"=> ice, "Electric"=> electric, "Wind"=> wind, "Psychic"=> psychic, "Nuclear"=> nuclear, "Bless"=> bless,"Curse"=>curse}
       Persona.new(name, arcana, level, stats, elements)
     end
-    print "We have the Persona! Now we are gathering the formulas to create them!\n"
+    print "Makoto: All done on my end! Passing it to you Haru!\n".blue
+    sleep(1.5)
+    print "Haru: Great job team! I will get those over to futaba to get the combinations for creation!\n".blue
   end
   def combo_to_make
     @@all_p.each do |stuff|
@@ -50,12 +54,13 @@ class Scraper
       persona = Persona.find_by_name(name)
       fusion_table = doc.css(".combo-to tr.combo")
       fusion_table.each do |combo|
-        persona1 = combo.css(".first-persona").text
-        persona2 = combo.css(".last-persona").text
-        formula = persona1 + "and" + persona2
+        persona1 = combo.css(".first-persona").text.strip
+        persona2 = combo.css(".last-persona").text.strip
+        formula = "#{persona1} and #{persona2}"
         persona.formulas << formula
       end
     end
-    print "All the combinations have been calculated.\n"
+    sleep(1.5)
+    print "Sojiro: Fuuka told me to give you these? All the combinations have been calculated... whatever that means...\n".blue
   end
 end

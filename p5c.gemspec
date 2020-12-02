@@ -6,12 +6,12 @@ require "p5c/version"
 Gem::Specification.new do |spec|
   spec.name          = "p5c"
   spec.version       = P5c::VERSION
-  spec.authors       = ["'Marie (Cho) Hughes'"]
-  spec.email         = ["'kchohee0630@gmail.com'"]
+  spec.authors       = ["'Marie Hughes'"]
+  spec.email         = ["'contact@mariehughes.net'"]
 
   spec.summary       = %q{Person 5 the game "Monster" compendium.}
   spec.description   = %q{ Search for the persona's by name, arcana, or element& its weakness. Allows for you to view combinations to creat the persona.}
-  spec.homepage      = "https://github.com/kchohee/p5c"
+  spec.homepage      = "https://github.com/MarieHughes93/p5c"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
